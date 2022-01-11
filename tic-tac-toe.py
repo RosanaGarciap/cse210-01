@@ -1,9 +1,15 @@
+'''
+Assignment: Game Tic-Tac-Toe
+Author: Rosana Garcia
+Course: CSE 210
+'''
 class Board():
     def __init__(self):
         self.board = "1|2|3\n-+-+-\n4|5|6\n-+-+-\n7|8|9"
         #             0 2 4        12 14 16      24 26 28
     def display_board(self):
-        print(self.board)
+        print(self.board+"\n")
+        
     def update(self,new_board):
         self.board = new_board
 
