@@ -1,5 +1,6 @@
 '''
 Assignment: Game Tic-Tac-Toe
+ String Version
 Author: Rosana Garcia
 Course: CSE 210
 '''
@@ -29,9 +30,7 @@ class Game():
              return True
 
     def keep_playing(self):
-        if(self.counter == 0):
-            print("Good game. Thanks for playing!")
-        else:
+        while((self.counter!=0) and not(self.win_player())):
             move = 0
             if (self.counter%2 != 0):
                 move = input("x's turn to choose a square (1-9): ")
@@ -40,10 +39,7 @@ class Game():
                 move = input("0's turn to choose a square (1-9): ") 
                 self.change_board(move, 'o')
             self.counter = self.counter - 1 
-            if(self.win_player()):
-                print("Good game. Thanks for playing!")
-            else:
-                self.keep_playing()
+        print("Good game. Thanks for playing!")
 
     def start_playing(self):
         self.board.display_board()
